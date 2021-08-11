@@ -1,0 +1,216 @@
+<body>
+  <mat-toolbar class="header-logo-toolbar">
+    <img
+      class="quantum-header-logo"
+      src="../../assets/quantum screen assets/icons/logo used in header.svg"
+      alt="Bulb"
+    />
+  </mat-toolbar>
+  <mat-card class="walkin-listing-card">
+    <div class="walkin-subtitle-flex">
+      <mat-card-title class="walkin-title">{{
+        walkinListings[listing_id - 1].title
+      }}</mat-card-title>
+      <button
+        (click)="sender(listing_id)"
+        class="apply-button"
+        mat-raised-button
+      >
+        APPLY
+      </button>
+    </div>
+
+    <mat-card-subtitle class="walkin-subtitle-1"
+      >Date & Time:</mat-card-subtitle
+    >
+    <div class="walkin-subtitle-flex">
+      <mat-card-subtitle class="walkin-subtitle-2"
+        >{{ walkinListings[listing_id - 1].startDate }} to
+        {{ walkinListings[listing_id - 1].endDate }}</mat-card-subtitle
+      >
+      <mat-divider class="vertical-divider" [vertical]="true"></mat-divider>
+      <mat-icon class="location-icon"> location_on</mat-icon>
+      <mat-card-subtitle class="walkin-subtitle-3">{{
+        walkinListings[listing_id - 1].location
+      }}</mat-card-subtitle>
+    </div>
+    <mat-divider class="horizontal-divider"></mat-divider>
+    <mat-card-subtitle class="walkin-subtitle-4">Job Roles:</mat-card-subtitle>
+    <div class="job-flex">
+      <div
+        *ngIf="walkinListings[listing_id - 1].jobRole1 != null"
+        class="each-job-flex"
+      >
+        <mat-icon>laptop_mac</mat-icon>
+        <mat-card-subtitle class="walkin-subtitle-5"
+          >Instructional Designer</mat-card-subtitle
+        >
+      </div>
+      <div
+        *ngIf="walkinListings[listing_id - 1].jobRole2 != null"
+        class="each-job-flex"
+      >
+        <mat-icon>laptop_mac</mat-icon>
+        <mat-card-subtitle class="walkin-subtitle-5"
+          >Software Engineer</mat-card-subtitle
+        >
+      </div>
+      <div
+        *ngIf="walkinListings[listing_id - 1].jobRole3 != null"
+        class="each-job-flex"
+      >
+        <mat-icon>laptop_mac</mat-icon>
+        <mat-card-subtitle class="walkin-subtitle-5"
+          >Software Quality Engineer</mat-card-subtitle
+        >
+      </div>
+    </div>
+  </mat-card>
+  <mat-accordion multi>
+    <mat-expansion-panel class="prerequisite-expansion-panel">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Pre-requisites & Application Process</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p class="general-subtitle-text">General Instructions:</p>
+      <ul class="dashed">
+        <li>Text 1</li>
+        <li>Text 2</li>
+        <li>Text 3</li>
+      </ul>
+      <mat-divider class="horizontal-divider"></mat-divider>
+      <p class="general-subtitle-text">Instructions for the Exam</p>
+      <ul class="dashed">
+        <li>Text 1</li>
+        <li>Text 2</li>
+        <li>Text 3</li>
+      </ul>
+      <mat-divider class="horizontal-divider"></mat-divider>
+      <p class="general-subtitle-text">Minimum System Requirements</p>
+      <ul class="dashed">
+        <li>Text 1</li>
+        <li>Text 2</li>
+        <li>Text 3</li>
+      </ul>
+      <mat-divider class="horizontal-divider"></mat-divider>
+      <p class="general-subtitle-text">Process:</p>
+      <ul class="dashed">
+        <li>Text 1</li>
+        <li>Text 2</li>
+        <li>Text 3</li>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <form [formGroup]="validationsForm" action="">
+    <mat-card class="time-slot">
+      <mat-card-title class="time-slot-title"
+        >Time Slot & Preferences</mat-card-title
+      >
+      <mat-card-subtitle class="time-slot-subtitle"
+        >Select a Time Slot:</mat-card-subtitle
+      >
+
+      <mat-radio-group
+        aria-label="Select an option"
+        class="applicant-radio-group"
+        required
+      >
+        <div
+          *ngFor="let item of [].constructor(count); let i = index"
+          class="column-flex-radio"
+        >
+          <mat-radio-button
+            class="applicant-radio-text"
+            value="{{ i }}"
+            (change)="radioChangeHandler(i + 1, $event)"
+            >{{ walkinListings[listing_id - 1].timeSlots.timeSlotStart[i] }} to
+            {{
+              walkinListings[listing_id - 1].timeSlots.timeSlotEnd[i]
+            }}</mat-radio-button
+          >
+        </div>
+        <mat-error
+          *ngIf="
+            this.validationsForm.get('radioArray').errors?.required && isSubmit
+          "
+        >
+          Please select a option!
+        </mat-error>
+      </mat-radio-group>
+
+      <mat-divider class="horizontal-divider"></mat-divider>
+      <mat-card-subtitle class="preference-subtitle"
+        >Select Your Preference:</mat-card-subtitle
+      >
+      <ul class="checkbox-margin">
+        <li *ngIf="walkinListings[listing_id - 1].jobRole1 != null">
+          <mat-checkbox
+            class="example-margin"
+            (change)="onRoleCheckboxChange($event)"
+            >Instructional Designer</mat-checkbox
+          >
+        </li>
+        <li *ngIf="walkinListings[listing_id - 1].jobRole2 != null">
+          <mat-checkbox
+            class="example-margin"
+            (change)="onRoleCheckboxChange($event)"
+            >Software Engineer</mat-checkbox
+          >
+        </li>
+        <li *ngIf="walkinListings[listing_id - 1].jobRole3 != null">
+          <mat-checkbox
+            class="example-margin"
+            (change)="onRoleCheckboxChange($event)"
+            >Software Quality Engineer</mat-checkbox
+          >
+        </li>
+      </ul>
+      <mat-error
+        class="error"
+        *ngIf="validationsForm.get('checkArray1').errors?.required && isSubmit"
+      >
+        Checkbox is required, select atleast one value.
+      </mat-error>
+    </mat-card>
+  </form>
+  <mat-accordion *ngIf="walkinListings[listing_id - 1].jobRole1 != null" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Instructional Designer</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p class="general-subtitle-text">Gross Compensation Package</p>
+      <ul class="dashed">
+        <li>Text 1</li>
+        <li>Text 2</li>
+        <li>Text 3</li>
+      </ul>
+      <mat-divider class="horizontal-divider"></mat-divider>
+      <p class="general-subtitle-text">Role Description</p>
+      <ul class="dashed">
+        <li>Text 1</li>
+        <li>Text 2</li>
+        <li>Text 3</li>
+      </ul>
+      <mat-divider class="horizontal-divider"></mat-divider>
+      <p class="general-subtitle-text">Requirements</p>
+      <ul class="dashed">
+        <li>Text 1</li>
+        <li>Text 2</li>
+        <li>Text 3</li>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion *ngIf="walkinListings[listing_id - 1].jobRole2 != null" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Software Engineer</mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion *ngIf="walkinListings[listing_id - 1].jobRole3 != null" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Software Quality Engineer</mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
+</body>

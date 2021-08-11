@@ -1,0 +1,69 @@
+<body>
+  <mat-toolbar>
+    <img
+      class="quantum-header-logo"
+      src="../../assets/quantum screen assets/icons/logo used in header.svg"
+      alt="Bulb"
+    />
+  </mat-toolbar>
+  <div class="example-container">
+    <h1 class="md-title">Log in</h1>
+    <form action="action.php">
+      <mat-form-field>
+        <mat-label>Email ID</mat-label>
+        <input
+          class="change-caret-color"
+          matInput
+          placeholder="pat@example.com"
+          [formControl]="email"
+          name="username"
+          [(ngModel)]="username"
+          required
+        />
+        <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <a class="forgot-email" href="#">FORGOT EMAIL ID?</a>
+      <mat-form-field>
+        <mat-label> Password </mat-label>
+        <input
+          class="change-caret-color"
+          matInput
+          name="password"
+          [(ngModel)]="password"
+          [type]="hide ? 'password' : 'text'"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]
+        >
+          <mat-icon class="preview-icon">{{
+            hide ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <a class="forgot-password" href="#">FORGOT PASSWORD?</a>
+      <section class="checkbox-section">
+        <mat-checkbox class="remember-checkbox">Remember Me</mat-checkbox>
+      </section>
+      <div class="log-in-button">
+        <button class="color-log-in" (click)="login()" mat-raised-button>
+          LOG IN
+        </button>
+      </div>
+      <p class="not-registered">Not registered yet?</p>
+      <div class="center-anchor">
+        <a class="create-an-account" href="../personal-information"
+          >CREATE AN ACCOUNT</a
+        >
+      </div>
+    </form>
+  </div>
+  <div class="about-footer">
+    <p>About</p>
+    <mat-divider [vertical]="true" class="vertical-divider"></mat-divider>
+    <p>Contact Us</p>
+  </div>
+</body>

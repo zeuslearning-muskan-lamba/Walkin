@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.myFont {
+  font-family: "Quicksand-Bold" !important;
+}
+.header-logo-toolbar {
+  background-color: black;
+  border-bottom: 3px solid #31b9e4;
+}
+.create-account-toolbar {
+  background-color: #3c4e62;
+  height: 50px !important;
+}
+.back-arrow {
+  color: #3fd28b;
+}
+.title {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+.align-center {
+  margin: auto;
+  width: 200px;
+}
+.color-log-in {
+  width: 100px;
+  line-height: 30px;
+  margin-right: 15px;
+  background-color: #3fd28b;
+  font-family: "Quicksand-Bold" !important;
+}
+.color-log-in-disabled {
+  opacity: 0.5;
+  color: black;
+  width: 100px;
+  line-height: 30px;
+  margin-right: 15px;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: #3fd28b;
+  font-family: "Quicksand-Bold" !important;
+}
+.main-head {
+  background-color: white;
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.mini-fab-container {
+  color: #222222;
+  display: flex;
+  width: 500px;
+  line-height: 5px;
+  align-items: center;
+}
+.mat-mini-fab {
+  margin: 15px 10px 15px 15px;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  box-shadow: none !important;
+}
+.number-in-fab {
+  width: 6px;
+  color: black;
+  font-size: 16px;
+  line-height: 18px;
+  margin-right: 2px;
+}
+.main-head-text {
+  max-width: 200px;
+  color: #222222;
+  font-size: 16px;
+  font-family: "Quicksand-Bold" !important;
+  margin-top: 16px;
+  margin-left: 0;
+  margin-right: 15px;
+}
+.line {
+  margin-top: 5px;
+  flex: 1;
+}
+.number-in-fab-disabled {
+  width: 6px;
+  color: white;
+  font-size: 16px;
+  line-height: 2px;
+  margin-right: 2px;
+}
+.edit-icon {
+  width: 16px;
+  height: 16px;
+  margin-bottom: 8px;
+  margin-right: 2px;
+}
+.education-headers-align {
+  align-items: center;
+}
+.mat-expansion-panel-header {
+  font-size: 16px;
+  font-family: "Quicksand-Bold" !important;
+  background-color: #dbefff !important;
+}
+.mat-expansion-panel {
+  margin: 20px;
+}
+.form-space {
+  max-width: 50%;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  font-family: "Quicksand-Bold" !important;
+}
+.space-fields {
+  display: flex;
+}
+.row-flex-left-space {
+  width: 50%;
+  margin-right: 20px;
+  font-family: "Quicksand-Bold" !important;
+}
+.row-flex-right-space {
+  width: 50%;
+  font-family: "Quicksand-Bold" !important;
+}
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.row-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row !important;
+  align-items: flex-start;
+}
+
+mat-label {
+  padding-bottom: 10px;
+}
+.applicant-text {
+  color: #666666;
+  font-family: "Quicksand-Bold" !important;
+}
+.applicant-radio-text {
+  margin-right: 10px;
+  font-family: "Quicksand-Bold" !important;
+}
+.applicant-radio-group {
+  display: flex;
+  font-family: "Quicksand-Bold" !important;
+  flex-direction: column;
+  margin: 10px 0;
+  font-size: 14px;
+}
+.row-flex-radio {
+  display: flex;
+  flex-direction: row !important;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+.margin-professional-header {
+  margin-top: 5px;
+}
+::ng-deep
+  .mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle,
+.mat-radio-outer-circle {
+  border-color: #1f7a54 !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #1f7a54 !important;
+}
+.other-information {
+  margin: 20px !important;
+  padding-left: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.expertise-technology {
+  color: #666666;
+}
+section span {
+  margin-top: 20px;
+}
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+li mat-checkbox {
+  margin-left: -40px !important;
+  font-family: "Quicksand-Bold" !important;
+}
+::ng-deep
+  .mat-checkbox-checked.mat-accent
+  .mat-checkbox-ripple
+  .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #1f7a54 !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #1f7a54;
+}
+.other-radio-group {
+  margin-top: 5px;
+}
+.other-text {
+  color: #666666;
+}
+.example-margin {
+  font-size: 16px;
+}
+.expertise-section {
+  margin-bottom: 0;
+}
+.familiar-section {
+  margin-bottom: 0;
+}
+.familiar-technology {
+  color: #666666;
+}
+.date-space {
+  font-family: "Quicksand-Bold" !important;
+  margin-left: 20px;
+  max-width: 50%;
+}
+.column-right-flex {
+  width: 100%;
+  display: flex;
+  margin-right: 20px;
+  flex-direction: column !important;
+}
+.column-left-flex {
+  width: 100%;
+  display: flex;
+  margin-right: 20px;
+  flex-direction: column !important;
+}
+.column-flex-space {
+  width: 100%;
+  font-family: "Quicksand-SemiBold" !important;
+}
+.role-apply-space {
+  width: 500px;
+  max-width: 100%;
+  font-family: "Quicksand-Bold" !important;
+}
+.college-located-space {
+  width: 500px;
+  max-width: 100%;
+  font-family: "Quicksand-Bold" !important;
+}
+.date-font {
+  font-family: "Quicksand-SemiBold" !important;
+}
+.applied-text {
+  margin-top: 10px;
+}
+.next-button {
+  background-color: #3fd28b;
+  width: 100px;
+  line-height: 28px;
+  margin-bottom: 30px;
+  margin-right: 5px;
+}
+.next-align-center {
+  margin: auto;
+  width: 200px;
+  display: flex;
+}
+.error {
+  margin-bottom: 20px;
+  color: red;
+}

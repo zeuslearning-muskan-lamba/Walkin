@@ -1,0 +1,193 @@
+<body>
+  <mat-toolbar class="header-logo-toolbar">
+    <img
+      class="quantum-header-logo"
+      src="../../assets/quantum screen assets/icons/logo used in header.svg"
+      alt="Bulb"
+    />
+  </mat-toolbar>
+  <mat-toolbar class="myFont create-account-toolbar">
+    <mat-icon class="back-arrow">keyboard_backspace</mat-icon>
+    <div class="align-center">
+      <h1 class="myFont title">Create An Account</h1>
+    </div>
+    <button class="color-log-in" mat-button>CANCEL</button>
+    <button class="color-log-in-disabled" mat-button>CREATE</button>
+  </mat-toolbar>
+  <div class="main-head">
+    <div class="mini-fab-container">
+      <button
+        mat-mini-fab
+        style="background-color: #3fd28b"
+        aria-label="Example icon button with a menu icon"
+      >
+        <p class="number-in-fab">1</p>
+      </button>
+      <p class="main-head-text">Personal Information</p>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+    <div class="mini-fab-container">
+      <div class="line"><mat-divider></mat-divider></div>
+      <button
+        mat-mini-fab
+        style="background-color: #757575"
+        aria-label="Example icon button with a menu icon"
+      >
+        <p class="number-in-fab-disabled">2</p>
+      </button>
+      <p class="main-head-text">Qualificatons</p>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+    <div class="mini-fab-container">
+      <div class="line"><mat-divider></mat-divider></div>
+      <button
+        mat-mini-fab
+        style="background-color: #757575"
+        aria-label="Example icon button with a menu icon"
+      >
+        <p class="number-in-fab-disabled">3</p>
+      </button>
+      <p class="main-head-text">Review and Proceed</p>
+    </div>
+  </div>
+  <div class="form-section">
+    <form [formGroup]="userValidations" action="action.php">
+      <mat-form-field class="form-space">
+        <mat-label>First Name</mat-label>
+        <input formControlName="firstName" matInput required />
+        <mat-error
+          *ngIf="userValidations.get('firstName').hasError('required')"
+        >
+          First Name is Required!
+        </mat-error>
+        <mat-error
+          *ngIf="userValidations.get('firstName').hasError('minlength')"
+        >
+          First Name should be atleast 4 characters long!
+        </mat-error>
+
+        <mat-error
+          *ngIf="userValidations.get('firstName').hasError('maxlength')"
+        >
+          First Name can be atmax n characters long!
+        </mat-error>
+
+        <mat-error *ngIf="userValidations.get('firstName').hasError('pattern')">
+          First Name must follow this pattern!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-space">
+        <mat-label>Last Name</mat-label>
+        <input formControlName="lastName" matInput required />
+        <mat-error *ngIf="userValidations.get('lastName').hasError('required')">
+          Last Name is Required!
+        </mat-error>
+        <mat-error
+          *ngIf="userValidations.get('lastName').hasError('minlength')"
+        >
+          Last Name should be atleast 4 characters long!
+        </mat-error>
+
+        <mat-error
+          *ngIf="userValidations.get('lastName').hasError('maxlength')"
+        >
+          Last Name can be atmax n characters long!
+        </mat-error>
+
+        <mat-error *ngIf="userValidations.get('lastName').hasError('pattern')">
+          Last Name must follow this pattern!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-space">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput required />
+        <mat-error *ngIf="userValidations.get('email').hasError('required')">
+          Email is Required!
+        </mat-error>
+        <mat-error *ngIf="userValidations.get('email').hasError('invalid')">
+          Not a valid email!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-space">
+        <mat-label>Phone Number</mat-label>
+        <input formControlName="mobileNumber" matInput required />
+        <mat-error
+          *ngIf="userValidations.get('mobileNumber').hasError('required')"
+        >
+          Phone Number is Required!
+        </mat-error>
+        <mat-error
+          *ngIf="userValidations.get('mobileNumber').hasError('pattern')"
+        >
+          Doesn't follow the pattern!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-space">
+        <mat-label class="form-label">Enter Portfolio URL (if any)</mat-label>
+        <input
+          type="text"
+          formControlName="portfolio"
+          (input)="urlChanged($event)"
+          matInput
+        />
+      </mat-form-field>
+
+      <section>
+        <span class="preferred-job-role">Preferred Job Roles*</span>
+        <ul>
+          <li *ngFor="let data of Data">
+            <mat-checkbox
+              type="checkbox"
+              class="example-margin"
+              value="{{ data.value }}"
+              [checked]="myArray.includes(data.value)"
+              (change)="onCheckboxChange($event)"
+              >{{ data.name }}</mat-checkbox
+            >
+          </li>
+        </ul>
+      </section>
+      <mat-error
+        class="error"
+        *ngIf="
+          this.userValidations.controls['checkArray'].errors?.required &&
+          isSubmit
+        "
+      >
+        Checkbox is required, select atleast one value.
+      </mat-error>
+
+      <mat-form-field class="form-referral-space">
+        <div class="referral-text">
+          <mat-label
+            >If you are registering via a referral, please mention full name of
+            the employee who referred you</mat-label
+          >
+        </div>
+
+        <input
+          type="text"
+          formControlName="refer"
+          (input)="referralChanged($event)"
+          matInput
+        />
+      </mat-form-field>
+      <ul>
+        <li>
+          <mat-checkbox formControlName="jobUpdates" class="job-updates"
+            >Send me job related updates via mail</mat-checkbox
+          >
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div class="next-align-center">
+    <button
+      (click)="goToQualifications()"
+      class="next-button myFont"
+      mat-raised-button
+    >
+      NEXT
+    </button>
+  </div>
+</body>

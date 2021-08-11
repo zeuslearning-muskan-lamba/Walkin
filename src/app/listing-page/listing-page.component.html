@@ -1,0 +1,60 @@
+<body>
+  <mat-toolbar class="header-logo-toolbar">
+    <img
+      class="quantum-header-logo"
+      src="../../assets/quantum screen assets/icons/logo used in header.svg"
+      alt="Bulb"
+    />
+  </mat-toolbar>
+  <mat-card *ngFor="let listing of walkinListings" class="walkin-listing-card">
+    <div *ngIf="listing.isExpiring">
+      <p class="expired">Expires in {{ listing.expiring_days }} days</p>
+    </div>
+    <mat-card-title class="walkin-title">{{ listing.title }}</mat-card-title>
+
+    <mat-card-subtitle class="walkin-subtitle-1"
+      >Date & Time:</mat-card-subtitle
+    >
+    <div class="walkin-subtitle-flex">
+      <mat-card-subtitle class="walkin-subtitle-2"
+        >{{ listing.startDate }} to {{ listing.endDate }}</mat-card-subtitle
+      >
+      <mat-divider class="vertical-divider" [vertical]="true"></mat-divider>
+      <mat-icon class="location-icon"> location_on</mat-icon>
+      <mat-card-subtitle class="walkin-subtitle-3">{{
+        listing.location
+      }}</mat-card-subtitle>
+    </div>
+    <mat-divider class="horizontal-divider"></mat-divider>
+    <mat-card-subtitle class="walkin-subtitle-4">Job Roles:</mat-card-subtitle>
+    <div class="job-flex">
+      <div *ngIf="listing.jobRole1 != null" class="each-job-flex">
+        <mat-icon>laptop_mac</mat-icon>
+        <mat-card-subtitle class="walkin-subtitle-5"
+          >Instructional Designer</mat-card-subtitle
+        >
+      </div>
+      <div *ngIf="listing.jobRole2 != null" class="each-job-flex">
+        <mat-icon>laptop_mac</mat-icon>
+        <mat-card-subtitle class="walkin-subtitle-5"
+          >Software Engineer</mat-card-subtitle
+        >
+      </div>
+      <div *ngIf="listing.jobRole3 != null" class="each-job-flex">
+        <mat-icon>laptop_mac</mat-icon>
+        <mat-card-subtitle class="walkin-subtitle-5"
+          >Software Quality Engineer</mat-card-subtitle
+        >
+      </div>
+    </div>
+    <div class="center-align-button">
+      <button
+        (click)="goToListingDetails(listing.id)"
+        class="view-details-button"
+        mat-raised-button
+      >
+        VIEW MORE DETAILS
+      </button>
+    </div>
+  </mat-card>
+</body>

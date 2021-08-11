@@ -1,0 +1,155 @@
+.myFont {
+  font-family: "Quicksand-Bold" !important;
+}
+.header-logo-toolbar {
+  background-color: black;
+  border-bottom: 3px solid #31b9e4;
+}
+.create-account-toolbar {
+  background-color: #3c4e62;
+  height: 50px !important;
+}
+.back-arrow {
+  color: #3fd28b;
+}
+.title {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+.align-center {
+  margin: auto;
+  width: 200px;
+}
+.color-log-in {
+  width: 100px;
+  line-height: 30px;
+  margin-right: 15px;
+  background-color: #3fd28b;
+  font-family: "Quicksand-Bold" !important;
+}
+.color-log-in-disabled {
+  opacity: 0.5;
+  color: black;
+  width: 100px;
+  line-height: 30px;
+  margin-right: 15px;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: #3fd28b;
+  font-family: "Quicksand-Bold" !important;
+}
+.main-head {
+  background-color: white;
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.mini-fab-container {
+  color: #222222;
+  display: flex;
+  width: 500px;
+  line-height: 5px;
+  align-items: center;
+}
+.mat-mini-fab {
+  margin: 15px 10px 15px 15px;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  box-shadow: none !important;
+}
+.number-in-fab {
+  width: 6px;
+  color: black;
+  font-size: 16px;
+  line-height: 18px;
+  margin-right: 2px;
+}
+.main-head-text {
+  max-width: 200px;
+  color: #222222;
+  font-size: 16px;
+  font-family: "Quicksand-Bold" !important;
+  margin-top: 16px;
+  margin-left: 0;
+  margin-right: 15px;
+}
+.line {
+  margin-top: 5px;
+  flex: 1;
+}
+.number-in-fab-disabled {
+  width: 6px;
+  color: white;
+  font-size: 16px;
+  line-height: 2px;
+  margin-right: 2px;
+}
+mat-form-field {
+  font-family: "Quicksand-Bold" !important;
+}
+.form-section {
+  background-color: white;
+  margin: 25px;
+}
+.form-space {
+  width: 50%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.form-referral-space {
+  width: 50%;
+  margin-left: 20px;
+}
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+  padding-left: 20px !important;
+}
+li mat-checkbox {
+  font-family: "Quicksand-Bold" !important;
+}
+input {
+  outline: none !important;
+}
+.preferred-job-role {
+  margin-left: 20px;
+  color: #666666;
+}
+.referral-text {
+  padding-bottom: 15px;
+  color: #666666;
+  font-family: "Quicksand-SemiBold";
+}
+::ng-deep
+  .mat-checkbox-checked.mat-accent
+  .mat-checkbox-ripple
+  .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #1f7a54 !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #1f7a54;
+}
+.job-updates {
+  margin-bottom: 5px;
+}
+.next-button {
+  background-color: #3fd28b;
+  width: 100px;
+  line-height: 28px;
+  margin-bottom: 30px;
+}
+.next-align-center {
+  margin: auto;
+  width: 200px;
+}
+.error {
+  margin-left: 20px;
+  color: red;
+}

@@ -1,0 +1,51 @@
+<body>
+  <mat-toolbar class="header-logo-toolbar">
+    <img
+      class="quantum-header-logo"
+      src="../../assets/quantum screen assets/icons/logo used in header.svg"
+      alt="Bulb"
+    />
+  </mat-toolbar>
+  <mat-card class="success-card">
+    <mat-icon class="check-circle">check_circle</mat-icon>
+    <mat-card-title class="success-card-title"
+      >Congratulations! You have successfully applied for the walk-in
+      opportunity</mat-card-title
+    >
+    <mat-divider class="horizontal-divider"></mat-divider>
+    <mat-card-subtitle class="date-and-time"
+      >Date & Time of Walk-In</mat-card-subtitle
+    >
+    <div>
+      <p class="date-walkin">{{ walkinListings[listing_id - 1].startDate }}</p>
+      <p class="date-walkin">
+        {{
+          walkinListings[listing_id - 1].timeSlots.timeSlotStart[timeSlot - 1]
+        }}
+        to
+        {{ walkinListings[listing_id - 1].timeSlots.timeSlotEnd[timeSlot - 1] }}
+      </p>
+    </div>
+    <mat-divider class="horizontal-divider"></mat-divider>
+    <mat-card-subtitle class="date-and-time"
+      >Venue of Walk-In:</mat-card-subtitle
+    >
+    <p class="date-walkin">
+      Zeus System Pvt. Ltd.<br />
+      1402, 14th Floor, Tower B, Peninsula Business Park, Ganpatrao Kadam
+      Marg<br />
+      Lower Parel(W)<br />
+      Mumbai - 400 013<br />
+      Phone: +91-22-66600000
+    </p>
+    <mat-divider class="horizontal-divider"></mat-divider>
+    <mat-card-subtitle class="date-and-time"
+      >THINGS TO REMEMBER:</mat-card-subtitle
+    >
+    <div class="center-align-button">
+      <button class="view-details-button" mat-raised-button>
+        DOWNLOAD HALL TICKET
+      </button>
+    </div>
+  </mat-card>
+</body>

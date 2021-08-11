@@ -1,0 +1,266 @@
+<body>
+  <mat-toolbar class="header-logo-toolbar">
+    <img
+      class="quantum-header-logo"
+      src="../../assets/quantum screen assets/icons/logo used in header.svg"
+      alt="Bulb"
+    />
+  </mat-toolbar>
+  <mat-toolbar class="myFont create-account-toolbar">
+    <mat-icon class="back-arrow">keyboard_backspace</mat-icon>
+    <div class="align-center">
+      <h1 class="myFont title">Create An Account</h1>
+    </div>
+    <button class="color-log-in" mat-button>CANCEL</button>
+    <button class="color-log-in" mat-button>CREATE</button>
+  </mat-toolbar>
+  <div class="main-head">
+    <div class="mini-fab-container">
+      <button
+        mat-mini-fab
+        style="background-color: #3fd28b"
+        aria-label="Example icon button with a menu icon"
+      >
+        <img
+          class="edit-icon"
+          src="https://img.icons8.com/material-rounded/24/000000/edit--v1.png"
+        />
+      </button>
+      <p class="main-head-text">Personal Information</p>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+    <div class="mini-fab-container">
+      <div class="line"><mat-divider></mat-divider></div>
+      <button
+        mat-mini-fab
+        style="background-color: #3fd28b"
+        aria-label="Example icon button with a menu icon"
+      >
+        <img
+          class="edit-icon"
+          src="https://img.icons8.com/material-rounded/24/000000/edit--v1.png"
+        />
+      </button>
+      <p class="main-head-text">Qualifications</p>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+    <div class="mini-fab-container">
+      <div class="line"><mat-divider></mat-divider></div>
+      <button
+        mat-mini-fab
+        style="background-color: #3fd28b"
+        aria-label="Example icon button with a menu icon"
+      >
+        <p class="number-in-fab">3</p>
+      </button>
+      <p class="main-head-text">Review and Proceed</p>
+    </div>
+  </div>
+  <div class="edit-section">
+    <p class="paraHeadings">Personal Information</p>
+    <a [routerLink]="['/personal-information']" class="edit-link">
+      <img class="myEditIcon" src="../../assets/edit-icon.png" />
+      <p class="edit-text">Edit</p>
+    </a>
+  </div>
+
+  <div class="information-section">
+    <p class="first-heading">First Name</p>
+    <p class="value1">{{ storageData.firstName }}</p>
+    <p class="heading1">Last Name</p>
+    <p class="value1">{{ storageData.lastName }}</p>
+    <p class="heading1">Email</p>
+    <p class="value1">{{ storageData.email }}</p>
+    <p class="heading1">Phone Number</p>
+    <p class="value1">{{ storageData.mobileNumber }}</p>
+    <p class="heading1">Enter Portfolio URL (if any)</p>
+    <p
+      class="value1"
+      *ngIf="storageData.portfolio != null; else elseBlock"
+      class="value1"
+    >
+      {{ storageData.portfolio }}
+    </p>
+    <ng-template #elseBlock>
+      <p class="value1">-</p>
+    </ng-template>
+    <p class="heading1">Preferred Job Roles</p>
+    <div *ngFor="let checkedBox of storageData.checkArray">
+      <p class="value1">{{ checkedBox }}</p>
+    </div>
+    <p class="heading1">
+      If you are registering via a referral, please mention full name of the
+      employee who referred you
+    </p>
+    <p *ngIf="storageData.refer != null; else elseBlock" class="value1">
+      {{ storageData.refer }}
+    </p>
+    <ng-template #elseBlock>
+      <p class="value1">-</p>
+    </ng-template>
+    <div class="education-row-flex jobUpdate">
+      <mat-icon *ngIf="storageData.jobUpdates" class="checkbox-icon"
+        >check_box</mat-icon
+      >
+
+      <mat-icon *ngIf="!storageData.jobUpdates" class="checkbox-icon"
+        >check_box_outline_blank</mat-icon
+      >
+
+      <p class="checkbox-text">Send me job related updates via mail</p>
+    </div>
+  </div>
+  <div class="edit-section">
+    <p class="paraHeadings">Qualifications</p>
+    <a [routerLink]="['/qualifications']" class="edit-link">
+      <img class="myEditIcon" src="../../assets/edit-icon.png" />
+      <p class="edit-text">Edit</p>
+    </a>
+  </div>
+  <div class="educational-header">
+    <p class="education-text">Educational Qualifications</p>
+  </div>
+  <div class="education-information">
+    <p class="first-heading">Aggregate Percentage</p>
+    <p class="value1">{{ storageEducationData.aggPercentage }}</p>
+    <p class="heading1">Year of Passing</p>
+    <p class="value1">{{ storageEducationData.yearOfPassing }}</p>
+    <div class="education-row-flex">
+      <div class="qualification">
+        <p class="heading1">Qualification</p>
+        <p class="value1">{{ storageEducationData.Qualification }}</p>
+      </div>
+      <div class="stream">
+        <p class="heading1">Stream</p>
+        <p class="value1">{{ storageEducationData.Stream }}</p>
+      </div>
+    </div>
+    <div class="education-row-flex">
+      <div class="qualification">
+        <p class="heading1">College</p>
+        <p class="value1">{{ storageEducationData.College }}</p>
+      </div>
+      <div class="stream">
+        <p class="heading1">Stream</p>
+        <p
+          class="value1"
+          *ngIf="storageData.otherCollege != null; else elseBlock"
+          class="value1"
+        >
+          {{ storageData.otherCollege }}
+        </p>
+        <ng-template #elseBlock>
+          <p class="value1">-</p>
+        </ng-template>
+      </div>
+    </div>
+    <p class="heading1">Where is your college located?</p>
+    <p class="value1">{{ storageEducationData.collegeLocated }}</p>
+  </div>
+  <div class="educational-header">
+    <p class="education-text">Professional Qualifications</p>
+  </div>
+  <div class="education-information">
+    <p class="first-heading">Applicant Type</p>
+    <p class="value1">{{ storageProfessionalData.radioArray[0] }}</p>
+  </div>
+  <div class="other-information-header">
+    <p class="first-heading">Years Of Experience</p>
+    <p class="value1">{{ storageOtherInformationData.yearsOfExperience }}</p>
+    <p class="heading1">Current CTC (In Rupees)</p>
+    <p class="value1">{{ storageOtherInformationData.currentCTC }}</p>
+    <p class="heading1">Expected CTC (In Rupees)</p>
+    <p class="value1">{{ storageOtherInformationData.expectedCTC }}</p>
+    <p class="heading1">Select All The Technologies You Expertise In</p>
+    <div *ngFor="let experience of storageOtherInformationData.checkArray1">
+      <p class="technology-value">{{ experience }}</p>
+    </div>
+    <p class="heading1">If others, please mention</p>
+    <p
+      *ngIf="
+        storageOtherInformationData.otherExpertiseTechnology != null;
+        else elseBlock
+      "
+      class="value1"
+    >
+      {{ storageOtherInformationData.otherExpertiseTechnology }}
+    </p>
+    <ng-template #elseBlock>
+      <p class="value1">-</p>
+    </ng-template>
+    <p class="heading1">Select All The Technologies You Are Familiar In</p>
+    <div *ngFor="let familiar of storageOtherInformationData.checkArray2">
+      <p class="technology-value">{{ familiar }}</p>
+    </div>
+    <p class="heading1">If others, please mention</p>
+    <p
+      *ngIf="
+        storageOtherInformationData.otherFamiliarTechnology != null;
+        else elseBlock
+      "
+      class="value1"
+    >
+      {{ storageOtherInformationData.otherFamiliarTechnology }}
+    </p>
+    <ng-template #elseBlock>
+      <p class="value1">-</p>
+    </ng-template>
+    <p class="heading1">Are You Currently On Notice Period?</p>
+    <p class="value1">{{ storageOtherInformationData.noticeArray[0] }}</p>
+    <div class="education-row-flex">
+      <div class="qualification">
+        <p class="heading1">If Yes, When will Your Notice Period End?</p>
+        <p
+          class="value1"
+          *ngIf="storageOtherInformationData.date != null; else elseBlock"
+          class="value1"
+        >
+          {{ storageOtherInformationData.period.date }}
+        </p>
+        <ng-template #elseBlock>
+          <p class="value1">-</p>
+        </ng-template>
+      </div>
+      <div class="stream">
+        <p class="heading1">
+          How Long Is Your Notice Period? (Mention In Months)
+        </p>
+        <p
+          class="value1"
+          *ngIf="storageOtherInformationData.period != null; else elseBlock"
+          class="value1"
+        >
+          {{ storageOtherInformationData.period }}
+        </p>
+        <ng-template #elseBlock>
+          <p class="value1">-</p>
+        </ng-template>
+      </div>
+    </div>
+
+    <p class="heading1">
+      Have You Appeared For Any Test By Zeus In The Past 12 Months?
+    </p>
+    <p class="value1">{{ storageOtherInformationData.testArray[0] }}</p>
+    <p class="heading1">If Yes, Which Role Did You Apply For?</p>
+    <p
+      class="value1"
+      *ngIf="storageOtherInformationData.role != null; else elseBlock"
+      class="value1"
+    >
+      {{ storageOtherInformationData.role }}
+    </p>
+    <ng-template #elseBlock>
+      <p class="value1">-</p>
+    </ng-template>
+  </div>
+  <div class="next-align-center">
+    <button
+      (click)="goToQualifications()"
+      class="next-button myFont"
+      mat-raised-button
+    >
+      PREVIOUS
+    </button>
+  </div>
+</body>

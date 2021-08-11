@@ -1,0 +1,546 @@
+<body>
+  <mat-toolbar class="header-logo-toolbar">
+    <img
+      class="quantum-header-logo"
+      src="../../assets/quantum screen assets/icons/logo used in header.svg"
+      alt="Bulb"
+    />
+  </mat-toolbar>
+  <mat-toolbar class="myFont create-account-toolbar">
+    <mat-icon class="back-arrow">keyboard_backspace</mat-icon>
+    <div class="align-center">
+      <h1 class="myFont title">Create An Account</h1>
+    </div>
+    <button class="color-log-in" mat-button>CANCEL</button>
+    <button class="color-log-in-disabled" mat-button>CREATE</button>
+  </mat-toolbar>
+  <div class="main-head">
+    <div class="mini-fab-container">
+      <button
+        mat-mini-fab
+        style="background-color: #3fd28b"
+        aria-label="Example icon button with a menu icon"
+      >
+        <img
+          class="edit-icon"
+          src="https://img.icons8.com/material-rounded/24/000000/edit--v1.png"
+        />
+      </button>
+      <p class="main-head-text">Personal Information</p>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+    <div class="mini-fab-container">
+      <div class="line"><mat-divider></mat-divider></div>
+      <button
+        mat-mini-fab
+        style="background-color: #3fd28b"
+        aria-label="Example icon button with a menu icon"
+      >
+        <p class="number-in-fab">2</p>
+      </button>
+      <p class="main-head-text">Qualifications</p>
+      <div class="line"><mat-divider></mat-divider></div>
+    </div>
+    <div class="mini-fab-container">
+      <div class="line"><mat-divider></mat-divider></div>
+      <button
+        mat-mini-fab
+        style="background-color: #757575"
+        aria-label="Example icon button with a menu icon"
+      >
+        <p class="number-in-fab-disabled">3</p>
+      </button>
+      <p class="main-head-text">Review and Proceed</p>
+    </div>
+  </div>
+  <form action="action.php" [formGroup]="qualificationsForm">
+    <mat-accordion class="education-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Educational Qualifications</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="form-section" formGroupName="educationValidations">
+          <mat-form-field class="form-space">
+            <mat-label>Aggregate Percentage</mat-label>
+            <input formControlName="aggPercentage" matInput required />
+            <mat-error
+              *ngIf="
+                qualificationsForm
+                  .get('educationValidations')
+                  .get('aggPercentage')
+                  .hasError('required')
+              "
+            >
+              Aggregate Percentage is Required!
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-space">
+            <mat-label>Year of Passing</mat-label>
+            <mat-select class="myFont" formControlName="yearOfPassing" required>
+              <mat-option
+                class="myFont"
+                *ngFor="let year of years"
+                [value]="year.value"
+              >
+                {{ year.value }}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="
+                qualificationsForm
+                  .get('educationValidations')
+                  .get('yearOfPassing')
+                  .hasError('required') &&
+                qualificationsForm
+                  .get('educationValidations')
+                  .get('yearOfPassing').pristine
+              "
+            >
+              Year of Passing is Required!
+            </mat-error>
+          </mat-form-field>
+          <div class="row-flex">
+            <mat-form-field class="row-flex-left-space">
+              <mat-label>Qualification</mat-label>
+              <mat-select
+                class="myFont"
+                formControlName="Qualification"
+                required
+              >
+                <mat-option
+                  class="myFont"
+                  *ngFor="let qualification of qualifications"
+                  [value]="qualification.value"
+                >
+                  {{ qualification.value }}
+                </mat-option>
+              </mat-select>
+              <mat-error
+                *ngIf="
+                  qualificationsForm
+                    .get('educationValidations')
+                    .get('Qualification')
+                    .hasError('required') &&
+                  qualificationsForm
+                    .get('educationValidations')
+                    .get('Qualification').pristine
+                "
+              >
+                Qualification is Required!
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="row-flex-right-space">
+              <mat-label>Stream</mat-label>
+              <mat-select class="myFont" formControlName="Stream" required>
+                <mat-option
+                  class="myFont"
+                  *ngFor="let stream of streams"
+                  [value]="stream.value"
+                >
+                  {{ stream.value }}
+                </mat-option>
+              </mat-select>
+              <mat-error
+                *ngIf="
+                  qualificationsForm
+                    .get('educationValidations')
+                    .get('Stream')
+                    .hasError('required') &&
+                  qualificationsForm.get('educationValidations').get('Stream')
+                    .pristine
+                "
+              >
+                Stream is Required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row-flex">
+            <mat-form-field class="row-flex-left-space">
+              <mat-label>College</mat-label>
+              <mat-select
+                class="myFont"
+                (selectionChange)="getCollegeName($event)"
+                formControlName="College"
+                required
+              >
+                <mat-option
+                  class="myFont"
+                  *ngFor="let college of colleges"
+                  [value]="college.value"
+                >
+                  {{ college.value }}
+                </mat-option>
+              </mat-select>
+              <mat-error
+                *ngIf="
+                  qualificationsForm
+                    .get('educationValidations')
+                    .get('College')
+                    .hasError('required') &&
+                  qualificationsForm.get('educationValidations').get('College')
+                    .pristine
+                "
+              >
+                College is Required!
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="row-flex-right-space">
+              <mat-label>If Others, Please Enter Your College Name</mat-label>
+              <input
+                formControlName="otherCollege"
+                matInput
+                [required]="isCollegeFieldRequired"
+              />
+              <mat-error
+                *ngIf="
+                  qualificationsForm
+                    .get('educationValidations')
+                    .get('otherCollege')
+                    .hasError('required')
+                "
+              >
+                Please enter the college name!
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="college-located-space">
+            <mat-label>Where Is Your College Located?</mat-label>
+            <input formControlName="collegeLocated" matInput required />
+            <mat-error
+              *ngIf="
+                qualificationsForm
+                  .get('educationValidations')
+                  .get('collegeLocated')
+                  .hasError('required')
+              "
+            >
+              College Location is Required!
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion class="education-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Professional Qualifications</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div
+          class="margin-professional-header"
+          formGroupName="professionalValidations"
+        >
+          <label class="applicant-text">Applicant Type*</label>
+
+          <mat-radio-group
+            aria-label="Select an option"
+            class="applicant-radio-group"
+          >
+            <div class="row-flex-radio">
+              <mat-radio-button
+                *ngFor="let data of Data"
+                class="applicant-radio-text"
+                value="{{ data.value }}"
+                [checked]="data.value === experienceRadioButton"
+                (change)="onRadioButtonChange($event)"
+                >{{ data.name }}</mat-radio-button
+              >
+            </div>
+            <mat-error
+              *ngIf="
+                this.qualificationsForm
+                  .get('professionalValidations')
+                  .get('radioArray').errors?.required && isSubmit
+              "
+            >
+              Please select a option!
+            </mat-error>
+          </mat-radio-group>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div formGroupName="otherInformationValidations">
+      <div class="other-information">
+        <mat-form-field class="form-space">
+          <mat-label>Years Of Experience</mat-label>
+          <input formControlName="yearsOfExperience" matInput required />
+          <mat-error
+            *ngIf="
+              qualificationsForm
+                .get('otherInformationValidations')
+                .get('yearsOfExperience')
+                .hasError('required')
+            "
+          >
+            Years of Experience is Required!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-space">
+          <mat-label>Current CTC (In Rupees)</mat-label>
+          <input formControlName="currentCTC" matInput required />
+          <mat-error
+            *ngIf="
+              qualificationsForm
+                .get('otherInformationValidations')
+                .get('currentCTC')
+                .hasError('required')
+            "
+          >
+            Current CTC is Required!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-space">
+          <mat-label>Expected CTC (In Rupees)</mat-label>
+          <input formControlName="expectedCTC" matInput required />
+          <mat-error
+            *ngIf="
+              qualificationsForm
+                .get('otherInformationValidations')
+                .get('expectedCTC')
+                .hasError('required')
+            "
+          >
+            Expected CTC is Required!
+          </mat-error>
+        </mat-form-field>
+        <section class="expertise-section">
+          <span class="expertise-technology"
+            >Select All The Technologies You Expertise In*</span
+          >
+          <ul *ngFor="let technology of technologies; let i = index">
+            <li>
+              <mat-checkbox
+                type="checkbox"
+                class="example-margin"
+                value="{{ technology.value }}"
+                [checked]="checkArray1.includes(technology.value)"
+                (change)="onExpertiseCheckboxChange($event)"
+                >{{ technology.name }}</mat-checkbox
+              >
+            </li>
+          </ul>
+          <mat-error
+            class="error"
+            *ngIf="
+              qualificationsForm
+                .get('otherInformationValidations')
+                .get('checkArray1').errors?.required && isSubmit
+            "
+          >
+            Checkbox is required, select atleast one value.
+          </mat-error>
+        </section>
+        <mat-form-field class="form-space">
+          <mat-label>If Others, Please Mention</mat-label>
+          <input
+            formControlName="otherExpertiseTechnology"
+            [required]="isExpertiseFieldRequired"
+            matInput
+          />
+          <mat-error
+            *ngIf="
+              qualificationsForm
+                .get('otherInformationValidations')
+                .get('otherExpertiseTechnology')
+                .hasError('required')
+            "
+          >
+            Please enter the technology name!
+          </mat-error>
+        </mat-form-field>
+        <section class="familiar-section">
+          <span class="familiar-technology"
+            >Select All The Technologies You Familiar In</span
+          >
+          <ul *ngFor="let technology of technologies">
+            <li>
+              <mat-checkbox
+                type="checkbox"
+                class="example-margin"
+                value="{{ technology.value }}"
+                [checked]="checkArray2.includes(technology.value)"
+                (change)="onFamiliarCheckboxChange($event)"
+                >{{ technology.name }}</mat-checkbox
+              >
+            </li>
+          </ul>
+          <mat-error
+            class="error"
+            *ngIf="
+              qualificationsForm
+                .get('otherInformationValidations')
+                .get('checkArray2').errors?.required && isSubmit
+            "
+          >
+            Checkbox is required, select atleast one value.
+          </mat-error>
+        </section>
+        <mat-form-field class="form-space">
+          <mat-label>If Others, Please Mention</mat-label>
+          <input
+            formControlName="otherFamiliarTechnology"
+            [required]="isFamiliarFieldRequired"
+            matInput
+          />
+          <mat-error
+            *ngIf="
+              qualificationsForm
+                .get('otherInformationValidations')
+                .get('otherFamiliarTechnology')
+                .hasError('required')
+            "
+          >
+            Please enter the technology name!
+          </mat-error>
+        </mat-form-field>
+        <div>
+          <label class="other-text">Are You Currently On Notice Period?*</label>
+        </div>
+        <mat-radio-group
+          aria-label="Select an option"
+          class="other-radio-group"
+        >
+          <div class="row-flex-radio">
+            <mat-radio-button
+              *ngFor="let data of booleanData"
+              class="applicant-radio-text"
+              value="{{ data.value }}"
+              [checked]="data.value === noticeRadioButton"
+              (change)="onNoticeRadioButtonChange($event)"
+              >{{ data.value }}</mat-radio-button
+            >
+          </div>
+          <mat-error
+            class="error"
+            *ngIf="
+              this.qualificationsForm
+                .get('otherInformationValidations')
+                .get('noticeArray').errors?.required && isSubmit
+            "
+          >
+            Please select a option!
+          </mat-error>
+        </mat-radio-group>
+        <div class="row-flex">
+          <div class="column-left-flex">
+            <label class="other-text"
+              >If Yes, When Will Your Notice Period End?</label
+            >
+            <mat-form-field class="date-font">
+              <mat-label>Choose a date</mat-label>
+              <input
+                matInput
+                [required]="isNoticeFieldRequired"
+                formControlName="date"
+                [matDatepicker]="picker"
+              />
+              <mat-error
+                *ngIf="
+                  qualificationsForm
+                    .get('otherInformationValidations')
+                    .get('date')
+                    .hasError('required')
+                "
+                >Date is required!</mat-error
+              >
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="column-right-flex">
+            <label class="other-text"
+              >How Long Is Your Notice Period? (Mention In Months)</label
+            >
+            <mat-form-field class="column-flex-space">
+              <mat-label>Period</mat-label>
+              <mat-select
+                formControlName="period"
+                [required]="isNoticeFieldRequired"
+              >
+                <mat-option
+                  *ngFor="let period of periods"
+                  [value]="period.value"
+                >
+                  {{ period.value }}
+                </mat-option>
+              </mat-select>
+              <mat-error
+                *ngIf="
+                  qualificationsForm
+                    .get('otherInformationValidations')
+                    .get('period')
+                    .hasError('required')
+                "
+                >Period is required!</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="applied-text">
+          <label class="other-text"
+            >Have You Appeared For Any Test By Zeus In The Past 12
+            Months?*</label
+          >
+        </div>
+        <mat-radio-group
+          aria-label="Select an option"
+          class="other-radio-group"
+        >
+          <div class="row-flex-radio">
+            <mat-radio-button
+              *ngFor="let data of booleanData"
+              class="applicant-radio-text"
+              value="{{ data.value }}"
+              [checked]="data.value === appearedTestRadioButton"
+              (change)="onAppearedTestRadioButtonChange($event)"
+              >{{ data.value }}</mat-radio-button
+            >
+          </div>
+
+          <mat-error
+            *ngIf="
+              this.qualificationsForm
+                .get('otherInformationValidations')
+                .get('testArray').errors?.required && isSubmit
+            "
+          >
+            Please select a option!
+          </mat-error>
+        </mat-radio-group>
+        <mat-form-field class="role-apply-space">
+          <mat-label>If Yes,Which Role Did You Apply For?</mat-label>
+          <input
+            formControlName="role"
+            [required]="isRoleFieldRequired"
+            matInput
+          />
+          <mat-error
+            *ngIf="
+              qualificationsForm
+                .get('otherInformationValidations')
+                .get('role')
+                .hasError('required')
+            "
+            >Role is required!</mat-error
+          >
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+  <div class="next-align-center myFont">
+    <button
+      class="next-button myFont"
+      (click)="goToPersonal()"
+      mat-raised-button
+    >
+      PREVIOUS
+    </button>
+    <button class="next-button myFont" (click)="goToReview()" mat-raised-button>
+      NEXT
+    </button>
+  </div>
+</body>

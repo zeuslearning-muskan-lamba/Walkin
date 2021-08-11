@@ -1,0 +1,115 @@
+mat-toolbar {
+  background-color: black;
+  border-bottom: 3px solid #31b9e4;
+}
+mat-label {
+  font-size: 16px;
+  width: 500px;
+  text-align: left;
+  background-color: white;
+  font-family: "Quicksand-SemiBold";
+  color: #666666;
+}
+mat-form-field {
+  margin: 0px 25px -15px 25px;
+  width: 450px;
+}
+.example-container {
+  background-color: white;
+  border-top: 4px solid #3ac7ec;
+  margin: auto;
+  margin-top: 100px;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.md-title {
+  font-family: "Quicksand-SemiBold";
+  text-align: center;
+  margin-top: 20px;
+}
+.forgot-email {
+  text-decoration: none;
+  color: #1f7a54;
+  float: right;
+  margin-right: 25px;
+  margin-bottom: 15px;
+}
+.forgot-password {
+  text-decoration: none;
+  color: #1f7a54;
+  float: right;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+.preview-icon {
+  color: #1f7a54;
+  font-size: 20px !important;
+}
+.checkbox-section {
+  margin-top: 50px;
+  margin-left: 15px;
+}
+.remember-checkbox {
+  margin: 0 12px;
+  font-size: 16px;
+  font-family: "Quicksand-Bold" !important;
+}
+::ng-deep
+  .mat-checkbox-checked.mat-accent
+  .mat-checkbox-ripple
+  .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #1f7a54 !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #1f7a54;
+}
+.log-in-button {
+  margin: auto;
+  width: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.color-log-in {
+  width: 200px;
+  background-color: #3fd28b;
+}
+.not-registered {
+  text-align: center;
+  margin-bottom: 0px;
+}
+.center-anchor {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.create-an-account {
+  text-decoration: none;
+  color: #1f7a54;
+}
+.about-footer {
+  display: flex;
+  position: absolute;
+  top: 90%;
+  left: 45%;
+  margin-bottom: 0px;
+  color: #1f7a54;
+}
+.vertical-divider {
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 20px;
+  color: #0000001f;
+}
+.change-caret-color {
+  caret-color: #1f7a54 !important;
+}
+
+:host ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: #1f7a54 !important;
+}

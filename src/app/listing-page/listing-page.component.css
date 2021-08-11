@@ -1,0 +1,91 @@
+body {
+  font-family: "Quicksand-SemiBold";
+  overflow-y: scroll;
+}
+.header-logo-toolbar {
+  background-color: black;
+  border-bottom: 3px solid #31b9e4;
+}
+.expired {
+  position: absolute;
+  top: -4% !important;
+  color: #d71f25;
+  padding: 0 5px;
+  font-family: "Quicksand-Bold";
+  background-color: #ffe4e6;
+  left: 85%;
+}
+.walkin-listing-card {
+  margin: 20px !important;
+}
+.walkin-title {
+  color: #469171;
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-family: "Quicksand-Bold";
+}
+.walkin-subtitle-1 {
+  color: #666666;
+  margin-bottom: 7px;
+  font-family: "Quicksand-SemiBold";
+}
+.walkin-subtitle-2 {
+  margin-top: -2px;
+  color: black;
+  font-family: "Quicksand-Bold";
+}
+.walkin-subtitle-flex {
+  display: flex;
+  flex-direction: row;
+}
+.job-flex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.each-job-flex {
+  display: flex;
+  flex-direction: row;
+}
+.vertical-divider {
+  margin: 0 20px;
+  height: 15px;
+}
+.location-icon {
+  margin-top: -5px;
+  color: #666666;
+}
+.walkin-subtitle-3 {
+  margin-top: -2px;
+  color: #666666;
+  font-family: "Quicksand-Bold";
+}
+.horizontal-divider {
+  margin-right: 20px !important;
+  position: relative !important;
+}
+.walkin-subtitle-4 {
+  margin-top: 15px !important;
+  color: #666666;
+  font-family: "Quicksand-Bold";
+}
+.walkin-subtitle-5 {
+  margin-top: 2px !important;
+  margin-left: 10px;
+  margin-bottom: 35px;
+  margin-right: 20px;
+  color: black;
+  font-size: 16px;
+  font-family: "Quicksand-SemiBold";
+}
+.view-details-button {
+  background-color: #3fd28b;
+  font-family: "Quicksand-Bold";
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+}
+.center-align-button {
+  width: 200px;
+  margin: auto !important;
+}

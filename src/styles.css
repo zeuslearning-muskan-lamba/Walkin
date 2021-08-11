@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Quicksand-Bold";
+  src: local("Quicksand-Bold"),
+    url("../src/assets/quantum screen assets/Quicksand font 1/static/Quicksand-Bold.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Quicksand-Light";
+  src: local("Quicksand-Light"),
+    url("../src/assets/quantum screen assets/Quicksand font 1/static/Quicksand-Light.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Quicksand-Medium";
+  src: local("Quicksand-Medium"),
+    url("../src/assets/quantum screen assets/Quicksand font 1/static/Quicksand-Medium.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Quicksand-Regular";
+  src: local("Quicksand-Regular"),
+    url("../src/assets/quantum screen assets/Quicksand font 1/static/Quicksand-Regular.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Quicksand-SemiBold";
+  src: local("Quicksand-SemiBold"),
+    url("../src/assets/quantum screen assets/Quicksand font 1/static/Quicksand-SemiBold.ttf")
+      format("truetype");
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Quicksand-SemiBold" !important;
+  background-color: #eeeeee;
+}

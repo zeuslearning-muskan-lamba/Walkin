@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "title": "Walk In For Designer Job Role",
+        "startDate": "10-Jul-2021",
+        "endDate": "11-Jul-2021",
+        "location": "Mumbai",
+        "isExpiring" : true,
+        "expiring_days": 5,
+        "jobRole1": "Instructional Designer",
+        "jobRole2": null,
+        "jobRole3": null,
+        "timeSlots":{
+            "timeSlotStart":[
+                "9:00 AM",
+                "1:00 PM"
+            ],
+            "timeSlotEnd":[
+                "11:00 AM",
+                "3:00 PM"
+            ]
+        },
+        "instructional_package": "5,00,000",
+        "instructional_role_description": "text-1",
+        "instructional_requirements": "text-2",
+        "software_engineer_package": "5,00,000",
+        "software_engineer_role_description": "text-1",
+        "software_engineer_requirements": "text-2",
+        "software_quality_engineer_package": "5,00,000",
+        "software_quality_engineer_role_description": "text-1",
+        "software_quality_engineer_requirements": "text-2"
+    },
+    {
+        "id": 2,
+        "title": "Walk In For Multiple Job Roles",
+        "startDate": "03-Jul-2021",
+        "endDate": "04-Jul-2021",
+        "location": "Mumbai",
+        "isExpiring" : false,
+        "jobRole1": "Instructional Designer",
+        "jobRole2": "Software Engineer",
+        "jobRole3": "Software Quality Engineer",
+        "timeSlots":{
+            "timeSlotStart":[
+                "9:00 AM",
+                "1:00 PM"
+            ],
+            "timeSlotEnd":[
+                "11:00 AM",
+                "3:00 PM"
+            ]
+        },
+        "instructional_package": "5,00,000",
+        "instructional_role_description": "text-1",
+        "instructional_requirements": "text-2",
+        "software_engineer_package": "5,00,000",
+        "software_engineer_role_description": "text-1",
+        "software_engineer_requirements": "text-2",
+        "software_quality_engineer_package": "5,00,000",
+        "software_quality_engineer_role_description": "text-1",
+        "software_quality_engineer_requirements": "text-2"
+    },
+    {
+        "id": 3,
+        "title": "Walk In For Design and Development Job Role",
+        "startDate": "10-Jul-2021",
+        "endDate": "11-Jul-2021",
+        "location": "Mumbai",
+        "isExpiring" : false,
+        "jobRole1": "Instructional Designer",
+        "jobRole2": "Software Engineer",
+        "jobRole3": null,
+        "timeSlots":{
+            "timeSlotStart":[
+                "9:00 AM",
+                "1:00 PM"
+            ],
+            "timeSlotEnd":[
+                "11:00 AM",
+                "3:00 PM"
+            ]
+        },
+        "instructional_package": "5,00,000",
+        "instructional_role_description": "text-1",
+        "instructional_requirements": "text-2",
+        "software_engineer_package": "5,00,000",
+        "software_engineer_role_description": "text-1",
+        "software_engineer_requirements": "text-2",
+        "software_quality_engineer_package": "5,00,000",
+        "software_quality_engineer_role_description": "text-1",
+        "software_quality_engineer_requirements": "text-2"
+    }
+]

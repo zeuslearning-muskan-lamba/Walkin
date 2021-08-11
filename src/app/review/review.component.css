@@ -1,0 +1,190 @@
+body {
+  font-family: "Quicksand-SemiBold";
+  margin: 0;
+}
+.myFont {
+  font-family: "Quicksand-Bold" !important;
+}
+.header-logo-toolbar {
+  background-color: black;
+  border-bottom: 3px solid #31b9e4;
+}
+.create-account-toolbar {
+  background-color: #3c4e62;
+  height: 50px !important;
+}
+.back-arrow {
+  color: #3fd28b;
+}
+.title {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+.align-center {
+  margin: auto;
+  width: 200px;
+}
+.color-log-in {
+  width: 100px;
+  line-height: 30px;
+  margin-right: 15px;
+  background-color: #3fd28b;
+  font-family: "Quicksand-Bold" !important;
+}
+.main-head {
+  background-color: white;
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.mini-fab-container {
+  color: #222222;
+  display: flex;
+  width: 500px;
+  line-height: 5px;
+  align-items: center;
+}
+.mat-mini-fab {
+  margin: 15px 10px 15px 15px;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  box-shadow: none !important;
+}
+.number-in-fab {
+  width: 6px;
+  color: black;
+  font-size: 16px;
+  line-height: 18px;
+  margin-right: 2px;
+}
+.main-head-text {
+  max-width: 200px;
+  color: #222222;
+  font-size: 16px;
+  font-family: "Quicksand-Bold" !important;
+  margin-top: 16px;
+  margin-left: 0;
+  margin-right: 15px;
+}
+.line {
+  margin-top: 5px;
+  flex: 1;
+}
+.number-in-fab-disabled {
+  width: 6px;
+  color: white;
+  font-size: 16px;
+  line-height: 2px;
+  margin-right: 2px;
+}
+.edit-icon {
+  width: 16px;
+  height: 16px;
+  margin-bottom: 8px;
+  margin-right: 2px;
+}
+.paraHeadings {
+  margin-left: 25px;
+  font-size: 18px;
+}
+.information-section {
+  margin: 25px;
+  background-color: white;
+}
+.heading1 {
+  font-size: 12px;
+  padding-left: 20px !important;
+  margin-bottom: 10px;
+  color: #666666;
+}
+.value1 {
+  font-size: 16px;
+  padding-left: 20px;
+  padding-top: 0 !important;
+  padding-bottom: 20px !important;
+}
+.technology-value {
+  font-size: 16px;
+  padding-left: 20px;
+  padding-top: 0 !important;
+}
+.first-heading {
+  font-size: 12px;
+  padding-top: 20px;
+  padding-left: 20px !important;
+  margin-bottom: 10px;
+  color: #666666;
+}
+.edit-section {
+  display: flex;
+  flex-direction: row;
+}
+.myEditIcon {
+  color: #1f7a54;
+  margin-top: 3px;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 60px;
+}
+.edit-text {
+  color: #1f7a54;
+  font-size: 16px;
+  position: absolute;
+  right: 25px;
+}
+.educational-header {
+  margin: 25px 25px 0 25px;
+  height: 56px;
+  line-height: 56px;
+  background-color: #dbefff;
+}
+.education-text {
+  margin-left: 20px;
+  font-size: 16px;
+}
+.education-information {
+  margin-top: 0px !important;
+  background-color: white;
+  margin: 25px;
+}
+.education-row-flex {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+}
+.qualification {
+  width: 50%;
+}
+.stream {
+  width: 50%;
+}
+.other-information-header {
+  margin: 25px;
+  background-color: white;
+}
+.next-button {
+  background-color: #3fd28b;
+  width: 100px;
+  line-height: 28px;
+  margin-bottom: 30px;
+}
+.next-align-center {
+  margin: auto;
+  width: 200px;
+}
+.jobUpdate {
+  margin: 0 20px 0 20px;
+}
+.checkbox-icon {
+  margin-right: 10px;
+  width: 18px;
+  height: 24px;
+}
+.checkbox-text {
+  margin-top: 2px;
+}
